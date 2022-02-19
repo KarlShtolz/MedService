@@ -11,7 +11,7 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @PrimaryKeyJoinColumn
-    private Long id;
+    private Long idPatient;//ID пациента
     private String fullName;//фио
     private String healthInsuranceNumber;//номер страховки
     private String attendingDoctor;//лечащий врач
