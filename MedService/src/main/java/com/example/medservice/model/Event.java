@@ -12,10 +12,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="Event")
 public class Event {
-    @Id
+
     @Column(name="idAppointment")
     private Long idAppointment;//id назначения
 
+    @Id
     @Column(name="idEvent")
     private Long idEvent;//id события
 

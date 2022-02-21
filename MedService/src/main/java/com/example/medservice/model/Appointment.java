@@ -9,10 +9,11 @@ import java.time.LocalTime;
 @Data
 @Table(name="Appointment")
 public class Appointment {
-    @Id
+
     @Column(name="idPatient")
     private Long idPatient;//ID пациента из таблицы Patient
 
+    @Id
     @Column(name="idAppointment")
     private Long idAppointment; // id назначения
 
