@@ -3,6 +3,7 @@ package com.example.medservice.model;
 import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 //пациент
 @Entity
@@ -34,4 +35,22 @@ public class Patient {
 
     @Column(name="status")
     private String status;//статус: лечиться/выписан
+
+    @OneToMany(mappedBy = "Patient", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Collection<Appointment> appointments;
+
+    public Patient(){
+    }
+
+    public Patient(Long idPatient, LocalDateTime birthDate, String patientSurname, String namePatient, String diagnosis,
+                   String healthInsuranceNumber, String attendingDoctor, String status){
+        this.idPatient=idPatient;
+        this.birthDate=birthDate;
+        this.patientSurname=patientSurname;
+        this.namePatient=namePatient;
+        this.diagnosis=diagnosis;
+        this.healthInsuranceNumber=healthInsuranceNumber;
+        this.attendingDoctor=attendingDoctor;
+        this.status=status;
+    }
 }
